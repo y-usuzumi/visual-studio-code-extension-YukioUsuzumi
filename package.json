@@ -3,6 +3,10 @@
     "displayName": "Yukio Usuzumi",
     "description": "",
     "version": "1.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/y-usuzumi/visual-studio-code-extension-YukioUsuzumi.git"
+    },
     "publisher": "y-usuzumi",
     "engines": {
         "vscode": "^1.28.0"
