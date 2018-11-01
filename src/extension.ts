@@ -48,10 +48,9 @@ class YukioUsuzumi {
         }
     }
 
-    public formatAndOrganizeImports() {
-        return vscode.commands.executeCommand("editor.action.formatDocument", () => {
-            return vscode.commands.executeCommand("editor.action.organizeImports");
-        });
+    public async formatAndOrganizeImports() {
+        await vscode.commands.executeCommand("editor.action.formatDocument");
+        await vscode.commands.executeCommand("editor.action.organizeImports");
     }
 
     dispose() {

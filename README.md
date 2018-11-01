@@ -19,6 +19,10 @@ No known issues yet.
 
 ## Release Notes
 
+### 1.1.3
+
+Re-revert async-await style (not related to the bug below)
+
 ### 1.1.2
 
 Async-await style led to a bug where file remains unsaved after the source action. Revert it.
