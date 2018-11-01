@@ -19,6 +19,10 @@ No known issues yet.
 
 ## Release Notes
 
+### 1.1.1
+
+Use async-await features instead of Promise style (purely code-style preference).
+
 ### 1.1.0
 
 Add `yu.formatAndOrganizeImports`
