@@ -19,6 +19,10 @@ No known issues yet.
 
 ## Release Notes
 
+### 1.1.2
+
+Async-await style led to a bug where file remains unsaved after the source action. Revert it.
+
 ### 1.1.1
 
 Use async-await features instead of Promise style (purely code-style preference).

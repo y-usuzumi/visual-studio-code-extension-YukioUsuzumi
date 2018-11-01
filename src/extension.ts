@@ -27,9 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('yu.emacs.centerToScreen', () => {
         yu.centerToScreen();
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('yu.formatAndOrganizeImports', () => {
-        yu.formatAndOrganizeImports();
-    }));
+    context.subscriptions.push(vscode.commands.registerCommand('yu.formatAndOrganizeImports', yu.formatAndOrganizeImports));
     context.subscriptions.push(vscode.languages.registerCodeActionsProvider({language: "python"}, new YUCodeAction(), {
         providedCodeActionKinds: [vscode.CodeActionKind.Source.append("format")]
     }));
@@ -50,9 +48,10 @@ class YukioUsuzumi {
         }
     }
 
-    public async formatAndOrganizeImports() {
-        await vscode.commands.executeCommand("editor.action.formatDocument");
-        await vscode.commands.executeCommand("editor.action.organizeImports");
+    public formatAndOrganizeImports() {
+        return vscode.commands.executeCommand("editor.action.formatDocument", () => {
+            return vscode.commands.executeCommand("editor.action.organizeImports");
+        });
     }
 
     dispose() {
